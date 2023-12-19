@@ -1,0 +1,57 @@
+creer la structure (quels sont les elements a mettre dedans ?)
+- int value
+- int position
+- void *previous
+- void *next
+- void *target
+- bool cheapest_push
+
+gerer l'input :
+	--> si argc == 2 :
+		- separer les nombres (fonction split)
+	--> initialiser la liste chainee (fonction init_stack)
+	boucler tant qu'il y a des parametres :
+		- checker si le parametre est un nombre (fonction is_digit)
+		- convertir la chaine de caractere en int (fonction atoi)
+		- stocker le int dans un noeud de la chaine (fonction lstnew)
+		- ajouter le noeud a la fin de la liste chainee (fonction lst_add_back)
+
+Messages d'erreur :
+- si certains parametres ne sont pas des nombres
+- si certains parametres ne tiennent pas dans un int
+- si il y a des doublons
+
+
+coder les fonctions pour chaque mouvement
+creer deux pointeurs sur la structure (stack_a & stack_b) et les initialiser
+a NULL
+
+
+Algorithme :
+
+- si 3 entiers ou moins dans a : pas besoin de besoin (fonction pour compter
+le nombre de noeuds)
+- si plus de 3 entiers :
+{
+	objectif = mettre les noeuds de a dans b dans l'ordre decroissant
+
+	- pusher les deux premiers noeuds de a dans b sans regarder l'ordre
+	- pour chaque noeud de a, compter le nbr de mouvements necessaires pour
+	le placer au bon endroit dans la pile b :
+		- fonction pour trouver la "target" dans b (nbr plus petit le plus
+		proche du noeud a)
+		- fonction pour compter le nbr de move pour positionner le noeud a au dessus de sa
+		target dans b
+	- trouver le noeud pour lequel le moins de mouvement est necessaire
+}
+
+
+fonction find_target_node :
+	- comparer chaque noeud de b avec le noeud a actuel.
+	- si valeur du noeud a > valeur du noeud b
+		- si target_node = NULL : target_node = noeud b
+		- sinon : si target_node < noeud b : target_node = noeud b
+	- si pas de valeur b < valeur a = target_node = noeud max b
+
+move b to a :
+- 
